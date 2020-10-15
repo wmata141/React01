@@ -12,6 +12,8 @@ import { FaTachometerAlt, FaGem, FaGithub, FaReact, FaRegListAlt } from 'react-i
 import { BiListUl } from 'react-icons/bi'
 import { SiTodoist } from 'react-icons/si'
 import { ImBooks } from 'react-icons/im'
+import { RiHotelLine } from 'react-icons/ri'
+
 import sidebarBg from '../assets/images/bg1.jpg'
 
 const Aside = ({setToggled, toggled, children}) => {  
@@ -46,7 +48,8 @@ const Aside = ({setToggled, toggled, children}) => {
     {id: 3, name: 'Country C', href: '/countriesClass', icon: <BiListUl />},
     {id: 4, name: 'Country H', href: '/countriesHook', icon: <FaRegListAlt />},
     {id: 5, name: 'Ed List', href: '/edTodoList', icon: <SiTodoist />},
-    {id: 6, name: 'Books Shop', href: '/bookShop', icon: <ImBooks />}
+    {id: 6, name: 'Books Shop', href: '/bookShop', icon: <ImBooks />},
+    {id: 7, name: 'Hotel Home', href: '/hotelHome', icon: <RiHotelLine />}
   ]
 
   return (

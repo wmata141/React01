@@ -7,6 +7,7 @@ import CountriesHook from './modules/countriesHook'
 import EdTodoList from './modules/edTodoList'
 import BookShop from './modules/shop/bookShop'
 import CarShop from './modules/shop/carShop'
+// import HotelHome from "./modules/hotelHome";
 
 const AppRouter = () => {  
   return (
@@ -19,6 +20,7 @@ const AppRouter = () => {
         <Route path="/edTodoList" component={EdTodoList} />
         <Route path="/bookShop" component={BookShop} />
         <Route path="/carShop" component={CarShop} />
+        {/* <Route path="/hotelHome" component={HotelHome} /> */}
         <Route render={() => <Redirect to="/" />} />
       </Switch>
     </BrowserRouter>

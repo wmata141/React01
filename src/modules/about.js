@@ -6,9 +6,12 @@ import Aside from '../components/Aside'
 const About = () => {
   const [toggled, setToggled] = useState(false);
   const arr = [-4, 3, -9, 0, 4, 1]
-
+  const list = [1,2,3]
+  const list2 = ["Barbara", "Carla", "Andres", ]
   useEffect(() => {
-      plusMinus(arr)
+      // plusMinus(arr)
+      // sum(list)
+      PrintNames(list2)
   }, [])
 
 function plusMinus(arr) {
@@ -37,8 +40,32 @@ function plusMinus(arr) {
     
     console.log("Number(0.500000).toFixed(5)",typeof(Number(0.500000).toFixed(5)),' ', Number(0.500000).toFixed(5))
     console.log(arrResult)
-}
+  }
+  
+  const sum = ( list ) => {
+    let count = 0;
+    list.forEach( item => {
+      count += item
+    })
+    return show(count)
+  }
 
+  const show = (sum) => {
+    console.log(sum)
+  }
+
+  const PrintNames  = (names) => {
+    names.sort()
+    
+    let rows = [];
+    rows.push('<ol>')
+    names.forEach(item => {
+        rows.push(`<li>${item}</li>`)                 
+    });
+    rows.push('</ol>')      
+    console.log(rows);
+    return rows
+  }
   return (    
     <Aside        
       toggled={toggled}  
@@ -53,7 +80,7 @@ function plusMinus(arr) {
             <img width={80} src={reactLogo} alt="react logo" /> {'About'}
           </h1>        
         </header>
-        <h2>about: </h2>       
+        <h2>about: {PrintNames(list2)}</h2>       
         <footer>
           footer
         </footer>
