@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import Index from './modules/index'
 import About from './modules/about'
+import Fecha from './modules/fecha'
 import CountriesClass from './modules/countriesClass'
 import CountriesHook from './modules/countriesHook'
 import EdTodoList from './modules/edTodoList'
@@ -15,6 +16,7 @@ const AppRouter = () => {
       <Switch>
         <Route path="/" exact component={Index} />
         <Route path="/about" component={About} />        
+        <Route path="/fecha" component={Fecha} />
         <Route path="/countriesClass" component={CountriesClass} />
         <Route path="/countriesHook" component={CountriesHook} />
         <Route path="/edTodoList" component={EdTodoList} />

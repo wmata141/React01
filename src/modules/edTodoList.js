@@ -4,7 +4,7 @@ import reactLogo from '../assets/images/logo.svg';
 import Aside from '../components/Aside'
 import Form from '../components/form'
 import TodoList from '../components/todoList'
-import '../assets/styles/css/index.css';
+import '../assets/styles/css/index.scss';
 
 const EdTodoList = () => {
   const [inputText, setInputText] = useState('')
@@ -14,15 +14,15 @@ const EdTodoList = () => {
   const [toggled, setToggled] = useState(false);
 
   useEffect(() => {
-    getLocalTodos()
+    getLocalTodos();
   }, [])
 
   useEffect(() => {     
-    filterHandler();
-    saveLocalTodos();
+    filterHandler(status)
+    saveLocalTodos(todos)
   }, [todos, status])
 
-  const filterHandler = () => {
+  const filterHandler = (status) => {
     switch (status) {
       case 'completed':
         setFilteredTodos(todos.filter(todo => todo.completed === true))
@@ -36,7 +36,7 @@ const EdTodoList = () => {
     }
   }
 
-  const saveLocalTodos = () => {
+  const saveLocalTodos = (todos) => {
     localStorage.setItem('todos', JSON.stringify(todos))    
   }
 
