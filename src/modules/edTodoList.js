@@ -20,6 +20,7 @@ const EdTodoList = () => {
   useEffect(() => {     
     filterHandler(status)
     saveLocalTodos(todos)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [todos, status])
 
   const filterHandler = (status) => {

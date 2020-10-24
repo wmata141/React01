@@ -89,7 +89,7 @@ const CustomDatePickDiv = styled.div`
   background-color: white;
   border: solid 0.1em #cbd4c9;
   border-radius: 0.25em;  
-  padding-right: 160px;
+  padding-right: 130px;
   padding-top: 5px;
   padding-left: 5px;
 `;
