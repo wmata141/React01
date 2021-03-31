@@ -52,6 +52,7 @@ const About = () => {
               selectsStart
               startDate={startDate}
               endDate={endDate}
+              minDate={new Date()}
               customInput={<CustomInput />}
             />
           </DatePickerDiv>
