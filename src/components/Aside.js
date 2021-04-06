@@ -44,7 +44,10 @@ const Aside = ({setToggled, toggled, children}) => {
 
   const routes = [
     {id: 1, name: 'Index', href: '/', icon: <FaTachometerAlt />},
-    {id: 2, name: 'About', href: '/about', icon: <FaGem />},
+    {id: 12, name: 'About1', href: '/about1', icon: <FaGem />},
+    {id: 13, name: 'About2', href: '/about2', icon: <FaGem />},
+    {id: 14, name: 'About3', href: '/about3', icon: <FaGem />},
+    {id: 15, name: 'About4', href: '/about4', icon: <FaGem />},
     {id: 2, name: 'Fecha', href: '/fecha', icon: <RiCalendar2Line />},
     {id: 3, name: 'Country C', href: '/countriesClass', icon: <BiListUl />},
     {id: 4, name: 'Country H', href: '/countriesHook', icon: <FaRegListAlt />},

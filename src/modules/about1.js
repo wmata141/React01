@@ -47,7 +47,15 @@ const banks = [
 const About = () => {
   const [toggled, setToggled] = useState(false);
   useEffect(() => {
+    console.log("useEffect");
+    const foo = {
+      bar: 10,
+      baz: function (x=10) {
+        return this.bar + x
 
+      }
+    }
+    console.log("foo.baz(90)",foo.baz(90));
   }, [])
 
   // 0 Arreglo con los ids de clientes
