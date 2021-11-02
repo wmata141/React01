@@ -47,15 +47,13 @@ const banks = [
 const About = () => {
   const [toggled, setToggled] = useState(false);
   useEffect(() => {
-    console.log("useEffect");
     const foo = {
       bar: 10,
-      baz: function (x=10) {
+      baz: function (x = 10) {
         return this.bar + x
 
       }
     }
-    console.log("foo.baz(90)",foo.baz(90));
   }, [])
 
   // 0 Arreglo con los ids de clientes
@@ -238,7 +236,7 @@ const About = () => {
     return positionRanking
   }
 
-  const StringChallenge = (str) => {
+  const StringChallenge2 = (str) => {
     const size = str.length
     let flag = true
     let output = ''
@@ -259,6 +257,30 @@ const About = () => {
     console.log("output", output);
   }
 
+  // Input: "aabbcde"
+  // Output: 2a2b1c1d1e
+  // Input: "wwwbbbw"
+  // Output: 3w3b1w
+
+  function StringChallenge(str) {     
+    const arrayStr = str.split('')  
+    let auxString = arrayStr[0]
+    let outPut = ''
+    let cont = 0
+    
+    for (let index = 0; index <= arrayStr.length; index++) {  
+      if (auxString === arrayStr[index]) {
+        cont++  
+      } else {  
+        outPut = outPut + cont + auxString
+        auxString = arrayStr[index]
+        cont = 1
+      }  
+    }
+  
+    return outPut;
+  }
+
   const SearchingChallenge = (str) => {
     console.log("str ==>", str);
     const arrayKey = []
@@ -273,7 +295,7 @@ const About = () => {
 
     arrayKey.sort()
     const output = []
-    arrayKey.forEach(element1 => {      
+    arrayKey.forEach(element1 => {
       let cont = 0
       array.forEach(element2 => {
         if (element2[element1]) {
@@ -284,11 +306,83 @@ const About = () => {
         const obj = {
           [element1]: cont
         }
-        output.push(obj)        
+        output.push(obj)
       }
     });
   }
 
+  // that, given an array A of N integers, returns the smallest positive integer(greater than 0) that does not occur in A.
+  // For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5.
+  // Given A = [1, 2, 3], the function should return 4.
+  // Given A = [−1, −3], the function should return 1.
+  // Write an efficient algorithm for the following assumptions:
+  // N is an integer within the range[1..100, 000];
+  // each element of array A is an integer within the range[−1, 000, 000..1, 000, 000].
+  // Example test:   [1, 3, 6, 4, 1, 2]
+  // WRONG ANSWER (got 2 expected 5)
+
+  // Example test:   [1, 2, 3]
+  // WRONG ANSWER (got 2 expected 4)
+
+  // Example test:   [-1, -3]
+  // WRONG ANSWER (got 0 expected 1)
+
+  const A = [1, 3, 6, 4, 1, 2]
+  const manorSeguido = (A) => {
+    const aOrder = A.sort();
+
+    let elementAux = aOrder[0];
+    for (let index = 0; index < aOrder.length; index++) {
+      const element = aOrder[index];
+
+      if (element === elementAux || elementAux + 1 === element) {
+        elementAux = element
+      } else {
+        if (elementAux < 0) {
+          console.log("1")
+          return 1
+        } else {
+          console.log("elementAux + 1", elementAux + 1);
+          return elementAux + 1
+        }
+      }
+    }
+
+    console.log("aOrder[index] + 1", aOrder[aOrder.length - 1] + 1);
+    return aOrder[aOrder.length - 1] + 1
+  }
+
+  const S = ">>><<<"
+  const arrayCount = [0, 0, 0, 0]
+  const arrowTurn = (S) => {
+    const aArray = S.split('');
+    console.log("aArray ==>", aArray);
+    aArray.forEach(element => {
+      if (element === '>') {
+        arrayCount[0] = arrayCount[0] + 1
+      }
+      if (element === '<') {
+        arrayCount[1] = arrayCount[1] + 1
+      }
+      if (element === 'v') {
+        arrayCount[2] = arrayCount[2] + 1
+      }
+      if (element === '^') {
+        arrayCount[3] = arrayCount[3] + 1
+      }
+    });
+
+    let mayor = 0
+    let count = 0
+    arrayCount.forEach(element => {
+      if (mayor < element) {
+        mayor = element
+      }
+      count = count + element
+    });
+
+    return count - mayor
+  }
 
   return (
     <Aside
@@ -323,7 +417,7 @@ const About = () => {
         {console.log(banksPoorClients())}
         {console.log('Pregunta 8')}
         {console.log(newClientRanking())} */}
-
+        {console.log(StringChallenge("aabbcde"))}
         {/* {
           console.log(SearchingChallenge(["X:-1", "Y:1", "X:-4", "B:3", "X:5"]))
         } */}
