@@ -262,22 +262,22 @@ const About = () => {
   // Input: "wwwbbbw"
   // Output: 3w3b1w
 
-  function StringChallenge(str) {     
-    const arrayStr = str.split('')  
+  function StringChallenge(str) {
+    const arrayStr = str.split('')
     let auxString = arrayStr[0]
     let outPut = ''
     let cont = 0
-    
-    for (let index = 0; index <= arrayStr.length; index++) {  
+
+    for (let index = 0; index <= arrayStr.length; index++) {
       if (auxString === arrayStr[index]) {
-        cont++  
-      } else {  
+        cont++
+      } else {
         outPut = outPut + cont + auxString
         auxString = arrayStr[index]
         cont = 1
-      }  
+      }
     }
-  
+
     return outPut;
   }
 
@@ -384,6 +384,69 @@ const About = () => {
     return count - mayor
   }
 
+  const test = (x) => {
+    // let object = {a: '1', b: '2'};
+    // let { a, b} = object
+
+    // array1.concat(array2);
+    // console.log(a,b)
+    const array1 = ['a', 'b', 'c'];
+    const array2 = ['d', 'e', 'f'];
+    const array3 = array1.concat(array1);
+
+    console.log(array3);
+    return x
+  }
+
+  const pregunta_1_pantufla = (n = 100) => {
+    let pantufla = ''
+
+    for (let index = 0; index < n; index++) {
+
+      if (index % 2 === 0 && index % 3 === 0) {
+        pantufla += 'fla'
+      } else {
+        if (index % 2 === 0) pantufla += 'pan';
+        if (index % 3 === 0) pantufla += 'tu';
+      }
+    }
+
+    return pantufla
+  }
+
+  const pregunta_2_uber = (a = [1, 1], b = [3, 4], c = [5, 3]) => {
+    let distancia_1 = 0;
+    let distancia_2 = 0;
+    let cercano = 'A'
+
+    a[0] > b[0] ? distancia_1 += a[0] - b[0] : distancia_1 += b[0] - a[0]
+    a[1] > b[1] ? distancia_1 += a[1] - b[1] : distancia_1 += b[1] - a[1]
+
+    a[0] > c[0] ? distancia_2 += a[0] - c[0] : distancia_2 += c[0] - a[0]
+    a[1] > c[1] ? distancia_2 += a[1] - c[1] : distancia_2 += c[1] - a[1]
+
+    if (distancia_1 > distancia_2) {
+      cercano = 'B'
+    }
+
+    return `El pasajero más cercano es ${cercano}`
+  }
+
+  const pregunta_3_carrera = (liebre_a_posicion = 10, liebre_a_velocidad = 1, liebre_b_posición = 0, liebre_b_velocidad = 2, tiempo = 100) => {
+    let a = liebre_a_posicion
+    let b = liebre_b_posición
+
+    for (let index = 0; index < tiempo; index++) {
+      if (a !== b) {
+        a += liebre_a_velocidad
+        b += liebre_b_velocidad
+      } else {
+        return `Las liebres se encontraron en el cuadrante ${a}`
+      }      
+    }
+  }
+
+
   return (
     <Aside
       toggled={toggled}
@@ -417,10 +480,11 @@ const About = () => {
         {console.log(banksPoorClients())}
         {console.log('Pregunta 8')}
         {console.log(newClientRanking())} */}
-        {console.log(StringChallenge("aabbcde"))}
-        {/* {
-          console.log(SearchingChallenge(["X:-1", "Y:1", "X:-4", "B:3", "X:5"]))
-        } */}
+        {/* {console.log(StringChallenge("aabbcde"))} */}
+        {/* {console.log(SearchingChallenge(["X:-1", "Y:1", "X:-4", "B:3", "X:5"]))} */}
+        {/* {console.log(test("about1"))} */}
+        {console.log('Pregunta 1')}
+        {console.log(pregunta_3_carrera())}
         <footer>
           footer
         </footer>
