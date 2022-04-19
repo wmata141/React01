@@ -48,6 +48,7 @@ const Aside = ({setToggled, toggled, children}) => {
     {id: 13, name: 'About2', href: '/about2', icon: <FaGem />},
     {id: 14, name: 'About3', href: '/about3', icon: <FaGem />},
     {id: 15, name: 'About4', href: '/about4', icon: <FaGem />},
+    {id: 16, name: 'About5', href: '/about5', icon: <FaGem />},
     {id: 2, name: 'Fecha', href: '/fecha', icon: <RiCalendar2Line />},
     {id: 3, name: 'Country C', href: '/countriesClass', icon: <BiListUl />},
     {id: 4, name: 'Country H', href: '/countriesHook', icon: <FaRegListAlt />},
